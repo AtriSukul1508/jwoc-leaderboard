@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=1QzLg3DIarU"><img src="https://user-images.githubusercontent.com/58071992/155016490-352a3f88-ac75-4be7-b47c-8dd16288cf79.jpg" alt="Logo" width="75%"></a>
+<!--   <a href="https://www.youtube.com/watch?v=1QzLg3DIarU"><img src="https://user-images.githubusercontent.com/58071992/155016490-352a3f88-ac75-4be7-b47c-8dd16288cf79.jpg" alt="Logo" width="75%"></a> -->
 
   <h1 align="center">JWoC Leaderboard</h1>
 
