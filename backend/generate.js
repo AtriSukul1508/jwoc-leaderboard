@@ -34,13 +34,14 @@ const fetchAllData = async () => {
     a.total_points < b.total_points ? 1 : -1
   );
 
+  // console.log('data',leaderboardData)    
   let rank = 1;
 
   for (let pos = 0; pos < leaderboardData.length; pos++) {
     const currentData = leaderboardData[pos];
-
+    console.log('curr',currentData)
     const { full_name, college } = await getDatafromDB(currentData.user_name);
-
+    console.log(full_name,college)
     currentData.full_name = full_name;
     currentData.college = college;
 
@@ -66,9 +67,13 @@ const fetchAllData = async () => {
 const getDatafromDB = async (userName) => {
   let finalData = { full_name: "", college: "" };
   try {
-    const db = client.db("jwoc");
+    // const db = client.db("jwoc2k24");
+    // const collection = db.collection("mentees");
+    // const data = await collection.findOne({ $text: { $search: userName } });
+    const db = client.db("jwoc2k24");
     const collection = db.collection("mentees");
-    const data = await collection.findOne({ $text: { $search: userName } });
+    const data = await collection.findOne({ github: { $regex: `${userName}` } });
+    console.log("data",data)
     if (data) {
       finalData.full_name = data.name;
       finalData.college = data.college;
@@ -128,7 +133,7 @@ const fetchRepoData = async (repoName) => {
 
 const filterJwoc = (allData) => {
   let finalData = [];
-
+  const year = "2024";
   const jwocData = allData.filter((prData) => {
     let isJwoc = false;
     if (prData.merged_at) {
@@ -137,6 +142,7 @@ const filterJwoc = (allData) => {
           isJwoc = true;
         }
       });
+      if (!prData.created_at.includes(year)) isJwoc = false;
     }
 
     return isJwoc;
@@ -160,7 +166,7 @@ const filterJwoc = (allData) => {
 };
 
 const getPhase = (created_at) => {
-  const phase1deadlineISO = "2022-02-28T18:31:00.000Z";
+  const phase1deadlineISO = "2024-02-15T18:31:00.000Z";
   const deadline1 = new Date(phase1deadlineISO);
   const createdAtDate = new Date(created_at);
 

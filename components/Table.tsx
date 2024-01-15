@@ -9,7 +9,7 @@ const Table = ({ data }: { data: TableDataType[] }) => {
         <table className="w-full table-auto">
           <TableHeader />
 
-          <tbody>
+          <tbody >
             {data.map((item, i) => (
               <UserCard key={item.user_name} data={item} index={i} />
             ))}

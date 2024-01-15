@@ -16,6 +16,7 @@ import PRModal from "../components/PRModal";
 import TopCard from "../components/TopCard";
 import { TableDataType } from "../types";
 import { generateConfetti } from "../utils/generateConfetti";
+import bg from '../assets/13.png';
 
 const Home: NextPage = () => {
   const isModalOpen = useRecoilValue(modalState);
@@ -45,11 +46,12 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Leaderboard | JWoC 2K22</title>
+        <title>Leaderboard | JWoC 2K24</title>
         <link
           rel="shortcut icon"
           type="image/png"
-          href="https://jwoc.tech/assets/img/favicon.png"
+          // href="https://jwoc.tech/assets/img/favicon.png"
+          href="https://www.jwoc.tech/_next/static/media/jwoc-2024.652c49b8.svg"
         />
         <MetaTags />
       </Head>
@@ -73,15 +75,15 @@ const Home: NextPage = () => {
       <section className="relative mx-auto mt-32 mb-12">
         <div className="px-5 lg:px-0">
           <div className="relative my-10 mx-auto flex justify-center items-center flex-col text-center lg:mx-8 sm:mx-2">
-            <h2 className="my-1.5 pt-0 px-2 pb-2 font-['Blanka'] text-[2rem] font-bold text-lightblack tracking-[4px] rounded-lg bg-[rgba(255,255,255,0.8)] shadow-[0_0_4px_rgba(50,69,107,0.2)] md:text-[1rem]">
-              JWoC 2K22 Leaderboard
+            <h2 className="my-1.5 pt-0 px-2 pb-2 font-['Blanka'] text-[2rem] font-bold text-white tracking-[4px] rounded-lg shadow-[0_0_4px_rgba(50,69,107,0.2)] md:text-[1rem]">
+              JWoC 2K24 Leaderboard
             </h2>
-            <p className="my-4 font-codefont text-2xl font-medium text-lightblack tracking-wide">
+            <p className="my-4 font-codefont text-2xl font-medium text-white tracking-wide">
               Check your rank here!
             </p>
-            <p className="my-2 font-codefont text-lg font-medium text-lightblack tracking-wide">
+            <p className="my-2 font-codefont text-lg font-medium text-white tracking-wide">
               Last updated on:
-              <span className="mx-0.5 font-curlfont font-bold text-primarydark italic">
+              <span className="mx-0.5 font-curlfont font-bold text-yellow-300 italic">
                 {new Date(data.lastUpdated).toLocaleString("en-US", {
                   dateStyle: "full",
                   timeStyle: "full",
@@ -99,7 +101,7 @@ const Home: NextPage = () => {
           <div className="my-12 mx-12 lg:mx-8 sm:mx-2">
             <input
               type="search"
-              className="h-14 w-full px-3 py-3 font-codefont text-lg text-lightblack font-medium shadow focus:outline-none border-[3px] border-darkgrey tracking-wider rounded-lg"
+              className="h-14 w-full px-3 py-3 font-codefont text-lg text-white bg-[rgba(95,94,94,0.4)] font-medium shadow focus:outline-none border-[3px] border-gray-200 tracking-wider rounded-lg"
               placeholder="Search for your Name, GitHub username or college"
               value={searchText}
               onChange={handleSearch}
@@ -111,6 +113,20 @@ const Home: NextPage = () => {
           />
         </div>
       </section>
+      <div
+            className="bg-wrap"
+            style={{
+              position: "fixed",
+              left: "0",
+              top: "0",
+              right: "0",
+              bottom: "0",
+              backgroundImage: `url(${bg.src})`,
+              backgroundPosition: "50% 0",
+              backgroundSize: "cover",
+              zIndex: "-10900",
+            }}
+          ></div>
 
       {isModalOpen && <PRModal />}
 
