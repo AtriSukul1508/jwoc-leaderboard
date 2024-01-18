@@ -92,7 +92,7 @@ const Home: NextPage = () => {
             </p>
           </div>
 
-          <div className="relative my-10 px-20 flex justify-center items-center gap-8 lg:px-8 sm:px-2 md:flex-col">
+          <div className="relative my-10 px-20 flex justify-center items-center gap-8 lg:px-8 sm:px-6 md:flex-col">
             <TopCard userData={data.data[0]} />
             <TopCard userData={data.data[1]} />
             <TopCard userData={data.data[2]} />
