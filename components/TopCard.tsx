@@ -18,7 +18,7 @@ const TopCard = ({ userData }: { userData: TableDataType }) => {
 
   return (
     
-    <div className="relative m-auto w-full flex justify-center align-center flex-col bg-[rgba(49,49,49,0.5)] backdrop-blur-lg shadow-[0_0_4px_rgba(50,69,107,0.2)] rounded-[2rem] h-[21rem] z-[1] overflow-hidden">
+    <div className="relative m-auto w-full flex justify-center align-center flex-col bg-[rgba(49,49,49,0.5)] backdrop-blur-lg shadow-[0_0_2px_rgba(250,219,207,0.7)] rounded-[2rem] h-[21rem]  z-[1] overflow-hidden">
       <div className="m-auto w-full flex justify-center align-center flex-col  rounded-[6px] mb-2 mt-2">
         {/* <h2 className="mt-2.5 mb-0 mx-auto text-4xl font-medium font-codefont text-darkwhite text-center tracking-[0.8px]">
           {userData?.total_points}
@@ -26,13 +26,13 @@ const TopCard = ({ userData }: { userData: TableDataType }) => {
         <p className="-mt-[2px] mb-2.5 mx-auto text-lg font-medium font-mainfont text-darkwhite text-center tracking-[0.8px]">
           Points
         </p> */}
-        <span className="mb-2.5 px-5 py-1 text-xl font-medium font-codefont text-red-300 text-center tracking-[0.2px] rounded-[4px]">
+        <span className="mb-[-20px] px-5 py-1 text-xl font-medium font-codefont text-red-300 text-center tracking-[0.2px] rounded-[4px]">
           <span className="font-bold float-right text-4xl">#{userData?.rank}</span>
         </span>
       </div>
 
       <div className="flex flex-col items-center">
-        <div className="w-24 h-24 relative rounded-full overflow-hidden shadow lg:w-20 lg:h-20">
+        <div className="w-36 h-36 relative rounded-full overflow-hidden shadow lg:w-20 lg:h-20">
           <Image
             src={userData?.avatar_url}
             alt={userData?.user_name}
@@ -53,7 +53,7 @@ const TopCard = ({ userData }: { userData: TableDataType }) => {
         >
           {userData?.user_name}
         </a> */}
-        <p className="mx-auto text-lg font-medium font-codefont text-gray-600 text-center tracking-[0.2px] lg:text-base mb-[56px]">
+        <p className="mx-auto text-lg font-medium font-codefont text-gray-600 text-center tracking-[0.2px] lg:text-base mb-[4.5rem]">
           {userData?.college}
         </p>
         {/* <button
@@ -65,7 +65,7 @@ const TopCard = ({ userData }: { userData: TableDataType }) => {
         >
           View All PRs
         </button> */}
-        <div className="flex w-full justify-around items-center border-solid border-t bg-white absolute bottom-0">
+        <div className="flex w-full justify-around items-center border-white border-t absolute bottom-0">
             <a href={userData?.user_url} target="_blank" rel="noreferrer" className="w-1/3 text-xl text-gray-600 hover:text-blue-700 flex justify-center transition-colors duration-300">
               <FaGithub className="w-8 h-8"/>
             </a>
@@ -74,11 +74,11 @@ const TopCard = ({ userData }: { userData: TableDataType }) => {
               {/* <span className="mb-2.5 px-3 py-1 text-xl font-['Blanka']  text-yellow-600 text-center">
           Rank: #{userData?.rank}
         </span> */}
-        <span className="w-1/3 flex flex-col items-center justify-center border-x border-black gap-0">
-        <h2 className="mb-0 text-2xl font-bold font-codefont tracking-[0.8px]">
+        <span className="w-1/3 flex flex-col items-center justify-center border-x border-white gap-0">
+        <h2 className="mb-0 text-2xl font-bold text-yellow-300 font-codefont tracking-[0.8px]">
           {userData?.total_points}
         </h2>
-        <p className="px-auto text-lg font-['Blanka'] text-black tracking-[0.8px]">
+        <p className="px-auto text-lg font-['Blanka'] text-white tracking-[0.8px]">
           POINTS
         </p>
 
