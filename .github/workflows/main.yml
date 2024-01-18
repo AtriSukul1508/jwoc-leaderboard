@@ -22,7 +22,7 @@ jobs:
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
           MONGODB_URL: ${{ secrets.MONGODB_URL }}
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "feat: updated data using GitHub workflow"
           commit_user_name: AtriSukul1508
