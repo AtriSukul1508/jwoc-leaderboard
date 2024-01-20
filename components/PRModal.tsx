@@ -26,6 +26,12 @@ const PRModal = () => {
               {parseName(userData.full_name)}
             </span>
           </h2>
+          <h2 className="my-[2px] text-xl text-slate-500 font-medium font-codefont tracking-wide">
+            College:
+            <span className="mx-2 text-slate-700">
+              {userData.college}
+            </span>
+          </h2>
           <h2 className="my-[3px] text-lg text-slate-500 font-medium font-codefont tracking-wide">
             Total Points:
             <span className="mx-2 text-xl text-slate-700">
