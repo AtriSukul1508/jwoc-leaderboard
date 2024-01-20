@@ -32,7 +32,7 @@ const TopCard = ({ userData }: { userData: TableDataType }) => {
       </div>
 
       <div className="flex flex-col items-center">
-        <div className="w-36 h-36 relative rounded-full overflow-hidden shadow lg:w-20 lg:h-20">
+        <div className="w-36 h-36 relative rounded-full overflow-hidden shadow lg:w-20 lg:h-20 sm:w-[140px] sm:h-[140px]">
           <Image
             src={userData?.avatar_url}
             alt={userData?.user_name}
@@ -53,8 +53,8 @@ const TopCard = ({ userData }: { userData: TableDataType }) => {
         >
           {userData?.user_name}
         </a> */}
-        <p className="mx-auto text-lg font-medium font-codefont text-gray-600 text-center tracking-[0.2px] lg:text-base mb-[4.5rem]">
-          {userData?.college}
+        <p className="mx-auto text-lg font-medium font-codefont text-gray-600 text-center tracking-[0.2px] lg:text-base mb-[4.5rem] sm:mb-[56px]">
+          {userData?.college.length<=35? userData?.college : userData.college.slice(0,35)+"..."}
         </p>
         {/* <button
           onClick={() => {
@@ -91,7 +91,7 @@ const TopCard = ({ userData }: { userData: TableDataType }) => {
             setModal(true);
             setUserData(userData);
           }}
-          ><RiGitMergeFill className="w-8 h-8"
+          ><RiGitMergeFill className="w-8 h-8 hover:scale-[1.2]"
           color="rgb(115 165 7)" /></span>
             {/* </a> */}
           </div>
