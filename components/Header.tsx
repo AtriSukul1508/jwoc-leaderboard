@@ -32,7 +32,7 @@ const Header = () => {
             </div>
             {notificationModal && <div className="absolute w-[400px] flex flex-col justify-end items-end gap-1 right-3 sm:w-[250px] top-9 p-4 pt-[6px] pr-1 bg-[#ffffffea] backdrop-blur-[40px] rounded-lg">
               <XCircleIcon className="h-6 w-6 text-red-600 cursor-pointer float-right font-extrabold" onClick={()=>{setNotificationModal(false)}}/>
-            <p className=" text-black font-extralight text-justify mr-2">If the leaderboard shows, <span className="text-warningoff font-bold">&quot;Name Not Found/College Not Found&quot;</span> error against your GitHub username. Please fill up this <a href="https://forms.gle/sBVFbeEYQeCNRyrG6" rel="noreferrer" className="underline text-blue-600 font-bold" target="_blank">form</a> to update the discrepancy in user data. Invalid name fields will affect the participation certification distribution.</p>
+            <p className=" text-black font-extralight text-justify mr-2">If the leaderboard shows, <span className="text-warningoff font-bold">&quot;Name Not Found/College Not Found&quot;</span> error against your GitHub username. Please fill up this <a href="https://forms.gle/sBVFbeEYQeCNRyrG6" rel="noreferrer" className="underline text-blue-600 font-bold" target="_blank">form</a> to update the discrepancy in user data. Invalid name fields may affect the distribution of certificates.</p>
             </div>}
           </div>
         
