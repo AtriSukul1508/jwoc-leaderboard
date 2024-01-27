@@ -21,9 +21,12 @@ const Header = () => {
         <div className="flex items-center gap-5">
           <div className="relative flex flex-col gap-3">
             <div>
-              <div className="relative">
-              {!notificationModal && <span className="absolute right-1 bg-red-600 w-2 h-2 rounded-full"></span>}
-            <BellIcon className="mx-0.5 h-7 w-7 text-darkwhite cursor-pointer" onClick={() => {setNotificationModal(true)}}/>
+            <div className="relative cursor-pointer" onClick={() => {setNotificationModal(true)}}>
+              {!notificationModal && <span className="absolute right-1 "><span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-warningoff"></span>
+                </span></span>}
+                <BellIcon className="mx-0.5 h-7 w-7 text-darkwhite"/>
               </div>
 
             </div>
