@@ -1,9 +1,11 @@
 import Image from "next/image";
 
-import { HomeIcon } from "@heroicons/react/solid";
+import { HomeIcon,BellIcon,XCircleIcon } from "@heroicons/react/solid";
 import Logo from "../assets/jwoc-2024.svg";
+import { useState } from "react";
 
 const Header = () => {
+  const [notificationModal,setNotificationModal] = useState(false)
   return (
     <header className="fixed top-0 z-10 w-full px-20 py-1 bg-[rgba(49,49,49,0.1)] backdrop-blur shadow-[0_2px_4px_rgba(0,0,0,0.1)] md:px-4 transition">
       <nav className="flex justify-between items-center">
@@ -16,7 +18,21 @@ const Header = () => {
              JWoC
           </span>
         </a>
+        <div className="flex items-center gap-5">
+          <div className="relative flex flex-col gap-3">
+            <div>
+              <div className="relative">
+              {!notificationModal && <span className="absolute right-1 bg-red-600 w-2 h-2 rounded-full"></span>}
+            <BellIcon className="mx-0.5 h-7 w-7 text-darkwhite cursor-pointer" onClick={() => {setNotificationModal(true)}}/>
+              </div>
 
+            </div>
+            {notificationModal && <div className="absolute w-[400px] flex flex-col justify-end items-end gap-1 right-3 sm:w-[250px] top-9 p-4 pt-[6px] pr-1 bg-[#ffffffea] backdrop-blur-[40px] rounded-lg">
+              <XCircleIcon className="h-6 w-6 text-red-600 cursor-pointer float-right font-extrabold" onClick={()=>{setNotificationModal(false)}}/>
+            <p className=" text-black font-extralight text-justify mr-2">If the leaderboard shows, <span className="text-warningoff font-bold">"Name Not Found/College Not Found"</span> error against your GitHub username. Please fill up this <a href="https://forms.gle/sBVFbeEYQeCNRyrG6" className="underline text-blue-600 font-bold" target="_blank">form</a> to update the discrepancy in user data. Invalid name fields will affect the participation certification distribution.</p>
+            </div>}
+          </div>
+        
         <a
           href="https://jwoc.tech"
           className="px-4 py-2 flex justify-center items-center bg-[#103662] hover:bg-primarydark transition rounded-lg text-center cursor-pointer md:px-2 md:py-1.5"
@@ -26,6 +42,7 @@ const Header = () => {
             Home
           </span>
         </a>
+        </div>
       </nav>
     </header>
   );
