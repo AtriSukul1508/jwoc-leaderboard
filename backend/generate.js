@@ -166,7 +166,7 @@ const filterJwoc = (allData) => {
 };
 
 const getPhase = (created_at) => {
-  const phase1deadlineISO = "2024-02-15T18:31:00.000Z";
+  const phase1deadlineISO = "2024-02-14T18:30:00.000Z";;
   const deadline1 = new Date(phase1deadlineISO);
   const createdAtDate = new Date(created_at);
 
