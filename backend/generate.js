@@ -166,11 +166,13 @@ const filterJwoc = (allData) => {
 };
 
 const getPhase = (created_at) => {
-  const phase1deadlineISO = "2024-02-14T18:30:00.000Z";;
+  const phase1deadlineISO = "2024-02-14T18:30:00.000Z";
+  const phase2deadlineISO = "2024-02-25T18:30:00.000Z";
   const deadline1 = new Date(phase1deadlineISO);
+  const deadline2 = new Date(phase2deadlineISO);
   const createdAtDate = new Date(created_at);
-
-  if (createdAtDate > deadline1) return 2;
+  if (createdAtDate > deadline2) return -1;
+  else if (createdAtDate > deadline1) return 2;
   return 1;
 };
 
@@ -225,24 +227,36 @@ const getPoints = (labelsArray, phase) => {
       difficulty = levelsData.easy;
       if (phase === 1) {
         point = 1;
-      } else {
+      }
+      else if (phase == 2) {
         point = 2;
+      }
+      else {
+        point=0;
       }
     }
     if (label.toLowerCase().includes(levelsData.medium.toLowerCase())) {
       difficulty = levelsData.medium;
       if (phase === 1) {
         point = 3;
-      } else {
+      } 
+      else if (phase == 2) {
         point = 4;
+      }
+      else {
+        point=0;
       }
     }
     if (label.toLowerCase().includes(levelsData.hard.toLowerCase())) {
       difficulty = levelsData.hard;
       if (phase === 1) {
         point = 5;
-      } else {
+      } 
+      else if (phase == 2) {
         point = 8;
+      }
+      else {
+        point=0;
       }
     }
   });
